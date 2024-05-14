@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: custumerimformation_data
+  name: custumer-imformation_data
 spec:
   replicas: 3
   selector:
