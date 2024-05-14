@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: custumerimformation-service
+  name: custumer-imformation-service
 spec:
   selector:
     app: addressbook 
