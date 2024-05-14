@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: custumerimformation_data
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: addressbook
+  template:
+    metadata:
+      labels:
+        app: addressbook
+    spec:
+      containers:
+        - name: addressbook-container
+          image: chandanagirirajkumar/addressbook:v2
+          ports:
+            - containerPort: 8080
+
