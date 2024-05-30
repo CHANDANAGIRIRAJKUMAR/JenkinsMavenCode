@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anime-dolls
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: anime-dolls
+  template:
+    metadata:
+      labels:
+        app: anime-dolls
+    spec:
+      containers:
+      - name: anime-dolls
+        image: <your-docker-image>
+        ports:
+        - containerPort: 80
