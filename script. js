@@ -1,0 +1,28 @@
+import * as THREE from 'https://cdn.skypack.dev/three@0.133';
+import { OrbitControls } from 'https://cdn.skypack.dev/three@0.133/examples/jsm/controls/OrbitControls.js';
+
+const canvas = document.getElementById('canvas');
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, canvas.width / canvas.height, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({
+    canvas: canvas,
+    antialias: true
+});
+
+// Load anime doll model
+const loader = new THREE.GLTFLoader();
+loader.load('anime_doll.gltf', (gltf) => {
+    const doll = gltf.scene;
+    scene.add(doll);
+});
+
+// Set up camera and controls
+camera.position.z = 5;
+const controls = new OrbitControls(camera, canvas);
+controls.update();
+
+function animate() {
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
+}
+animate();
