@@ -16,4 +16,4 @@ spec:
         - name: addressbook-container
           image: chandanagirirajkumar/newaddressbook:1.2
           ports:
-            - containerPort: 8080
+            - containerPort: 82
